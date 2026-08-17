@@ -6,15 +6,15 @@
 VΑLVᴱX is a plugin for managing Steam manifest/lua files. 
 It add buttons to the Steam client to allow users to easily downnload and update their lua files.
 
-This project use [LumaCore]("https://github.com/KoriaPolis/LumaCore") DLL to handle family-sharing bypass,depot key loading, achievement spoofing, and legacy CD-key suppression. 
+This project use [LumaCore](https://github.com/KoriaPolis/LumaCore) DLL to handle family-sharing bypass,depot key loading, achievement spoofing, and legacy CD-key suppression. 
 
-It also use [millenium]("https://github.com/SteamClientHomebrew/Millennium") to inject functions into the Steam client to add buttons and handle lua file management.
+It also use [millenium](https://github.com/SteamClientHomebrew/Millennium) to inject functions into the Steam client to add buttons and handle lua file management.
 
-In the future, it will also use [uc-online2]("https://github.com/LukeWarmSodas/uc-online2") to spoof your game as Spacewar and allow you to play online with other users.
+In the future, it will also use [uc-online2](https://github.com/LukeWarmSodas/uc-online2) to spoof your game as Spacewar and allow you to play online with other users.
 
 ## How to use
 
-First, download the latest release from the [releases page]("https://github.com/AdrienMttn/ValveX/releases/latest")
+First, download the latest release from the [releases page](https://github.com/AdrienMttn/ValveX/releases/latest)
 
 Then, extract the contents of the zip file you will get the following files:
 ```
@@ -50,5 +50,5 @@ Steam will restart and you will be able to use the plugin.
 
 
 ## Thanks to
-- > [Midrags]("https://github.com/Midrags") for the inspiration with his project [SteaMidra]("https://github.com/Midrags/SFF")
-- > [LukeWarmSodas]("https://github.com/LukeWarmSodas") for his project [uc-online2]("https://github.com/LukeWarmSodas/uc-online2)
+- > [Midrags](https://github.com/Midrags) for the inspiration with his project [SteaMidra](https://github.com/Midrags/SFF)
+- > [LukeWarmSodas](https://github.com/LukeWarmSodas) for his project [uc-online2](https://github.com/LukeWarmSodas/uc-online2)
