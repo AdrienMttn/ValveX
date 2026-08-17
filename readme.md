@@ -1,4 +1,7 @@
-<img src="assets/logo.png" alt="Logo" width="250" style="display: block; margin: 0 auto;">
+<p align="center">
+  <img src="assets/logo.png" alt="Logo" width="250" style="display: block; margin: 0 auto;">
+</p>
+
 
 ##
 > ⚠️ This project is for educational purposes only. It is not intended for production use. Use at your own risk. ⚠️
