@@ -15,8 +15,8 @@ Millennium.zip
 ValveX.zip
 
 # --- Go build ---
-api.exe
-*.exe
+ManifestApi.exe
+
 
 # --- Plugins build ---
 plugins/STEAM_MANIFEST/
