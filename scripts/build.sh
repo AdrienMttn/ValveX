@@ -40,7 +40,7 @@ rm -rf LumaCoreExtract MillenniumExtract LumaCore.zip Millennium.zip
 
 # --- Plugins ---
 cd api
-go build -o ../build/millennium/plugins/STEAM_MANIFEST/ManifestApi.exe
+GOOS=windows GOARCH=amd64 go build -ldflags "-H windowsgui" -o ../build/millennium/plugins/STEAM_MANIFEST/ManifestApi.exe
 cd ..
 echo "Copie des plugins (sans node_modules)..."
 find plugins -maxdepth 1 -mindepth 1 ! -name "node_modules" -exec cp -r {} build/millennium/plugins/STEAM_MANIFEST \;
