@@ -1,0 +1,18 @@
+{
+    "scripts": {
+        "dev": "millennium-ttc --build dev",
+        "build": "millennium-ttc --build prod"
+    },
+    "devDependencies": {
+        "@steambrew/api": "^5.8.4",
+        "@steambrew/client": "^5.8.4",
+        "@steambrew/ttc": "^3.2.6",
+        "@steambrew/webkit": "^5.8.4"
+    },
+    "type": "module",
+    "name": "ValveX",
+    "version": "1.0.0",
+    "description": "A project that allows you to download for free any game on Steam.",
+    "author": "🥝 Adrikiwi 🥝",
+    "license": "MIT"
+}

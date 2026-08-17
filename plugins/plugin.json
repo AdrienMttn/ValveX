@@ -1,0 +1,10 @@
+{
+    "name": "STEAM_MANIFEST_PLUGIN",
+    "common_name": "CREATE BY https://github.com/AdrienMttn",
+    "description": "https://github.com/AdrienMttn",
+    "backendType": "lua",
+    "useBackend": true,
+    "webkitApiVersion": "2.0.0",
+    "version": "1.0.0"
+    
+}

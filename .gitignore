@@ -1,0 +1,29 @@
+# --- Node ---
+node_modules/
+dist/
+
+# --- Build local ---
+build/
+LumaCoreExtract/
+MillenniumExtract/
+
+# --- Archives téléchargées ---
+LumaCore.zip
+Millennium.zip
+
+# --- Release final ---
+ValveX.zip
+
+# --- Go build ---
+api.exe
+*.exe
+
+# --- Plugins build ---
+plugins/STEAM_MANIFEST/
+
+# --- OS junk ---
+.DS_Store
+Thumbs.db
+
+# --- Logs ---
+*.log

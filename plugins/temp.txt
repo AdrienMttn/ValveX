@@ -1,0 +1,16 @@
+
+LumaCore.dll
+dwmapi.dll
+wsock32.dll
+millennium/
+|──bin/
+|   |── millennium.luavm64.exe
+|   └── millennium.crashhandler64.exe
+|
+|──lib/
+|   |── millennium.dll
+|   └── millennium.hhx64.dll
+|
+└──plugins/
+    └── MonPlugins/
+
