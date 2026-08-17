@@ -14,5 +14,8 @@
     "version": "1.0.0",
     "description": "A project that allows you to download for free any game on Steam.",
     "author": "🥝 Adrikiwi 🥝",
-    "license": "MIT"
+    "license": "MIT",
+    "dependencies": {
+        "i": "^0.3.7"
+    }
 }
