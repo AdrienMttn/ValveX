@@ -59,26 +59,33 @@ function start-steam {
 function Download-VALVeX {
     stop-steam
     Write-Host "  Downloading VALVeX..." -ForegroundColor "Green"
+    $steamPath = Get-SteamPath
+    if (-not $steamPath) {
+        Write-Host "  Steam installation not found. Please ensure Steam is installed." -ForegroundColor "Red"
+        return
+    }
     $releaseInfo = Invoke-RestMethod -Uri $global:GithubRelease
     $downloadUrl = $releaseInfo.assets[0].browser_download_url
-    $downloadPath = Join-Path -Path $PSScriptRoot -ChildPath "VALVeX.zip"
+    $downloadPath = Join-Path -Path $steamPath -ChildPath "VALVeX.zip"
     $webClient = New-Object System.Net.WebClient
     $webClient.DownloadFile($downloadUrl, $downloadPath)
-    Unzip-VALVeX($downloadPath)
-    Moove-Files
-    Remove-TempFiles
+    $sourcePath = Unzip-VALVeX($downloadPath)
+    Moove-Files -sourcePath $sourcePath
+    Remove-TempFiles -zipFilePath $downloadPath -extractPath $sourcePath
     Write-Host "  Download complete!" -ForegroundColor "Green"
     start-steam
 }
 
 function Unzip-VALVeX {
   param (
-    [string]$zipFilePath = (Join-Path -Path $PSScriptRoot -ChildPath "VALVeX.zip")
+    [string]$zipFilePath,
+    [string]$steamPath = (Get-SteamPath)
   )
     Write-Host "  Unzipping VALVeX..." -ForegroundColor "Green"
-    $extractPath = Join-Path -Path $PSScriptRoot -ChildPath "VALVeX"
+    $extractPath = Join-Path -Path $steamPath -ChildPath "VALVeX"
     Expand-Archive -Path $zipFilePath -DestinationPath $extractPath -Force
     Write-Host "  Unzip complete!" -ForegroundColor "Green"
+    return $extractPath
 }
 
 function Moove-Files {
@@ -91,9 +98,13 @@ function Moove-Files {
 }
 
 function Remove-TempFiles {
+    param (
+        [string]$zipFilePath,
+        [string]$extractPath
+    )
     Write-Host "  Cleaning up temporary files..." -ForegroundColor "Green"
-    Remove-Item -Path (Join-Path -Path $PSScriptRoot -ChildPath "VALVeX.zip") -Force
-    Remove-Item -Path (Join-Path -Path $PSScriptRoot -ChildPath "VALVeX") -Recurse -Force
+    Remove-Item -Path $zipFilePath -Force
+    Remove-Item -Path $extractPath -Recurse -Force
     Write-Host "  Cleanup complete!" -ForegroundColor "Green"
 }
 
