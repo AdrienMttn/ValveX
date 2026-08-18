@@ -9,6 +9,8 @@
 VΑLVᴱX is a plugin for managing Steam manifest/lua files. 
 It add buttons to the Steam client to allow users to easily downnload and update their lua files.
 
+![Screenshot](assets/shop.png)
+
 This project use [LumaCore](https://github.com/KoriaPolis/LumaCore) DLL to handle family-sharing bypass,depot key loading, achievement spoofing, and legacy CD-key suppression. 
 
 It also use [millenium](https://github.com/SteamClientHomebrew/Millennium) to inject functions into the Steam client to add buttons and handle lua file management.
