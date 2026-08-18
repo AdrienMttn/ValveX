@@ -15,8 +15,7 @@ function Write-Title {
 function Write-Menu {
     Write-Host ""
     Write-Host "  [1] Download VALVeX" -ForegroundColor "Green"
-    Write-Host "  [2] Update VALVeX" -ForegroundColor "Yellow"
-    Write-Host "  [3] Exit" -ForegroundColor "Red"
+    Write-Host "  [2] Exit" -ForegroundColor "Red"
     Write-Host ""
 }
 
@@ -45,6 +44,7 @@ function stop-steam {
     if ($steamProcess) {
         Stop-Process -Id $steamProcess.Id -Force
         Write-Host "  Steam stopped." -ForegroundColor "Yellow"
+        start-sleep -Seconds 2
     } else {
         Write-Host "  Steam is not running." -ForegroundColor "Yellow"
     }
@@ -65,7 +65,7 @@ function Download-VALVeX {
     $webClient = New-Object System.Net.WebClient
     $webClient.DownloadFile($downloadUrl, $downloadPath)
     Unzip-VALVeX($downloadPath)
-    res = Moove-Files
+    Moove-Files
     Remove-TempFiles
     Write-Host "  Download complete!" -ForegroundColor "Green"
     start-steam
@@ -85,20 +85,9 @@ function Moove-Files {
     param (
         [string]$sourcePath = (Join-Path -Path $PSScriptRoot -ChildPath "VALVeX")
     )
-    try {
-        $steamPath = Get-SteamPath
-        if (-not $steamPath) {
-            Write-Host "  Steam installation path not found. Please ensure Steam is installed." -ForegroundColor "Red"
-            return false
-        }
-        Write-Host "  Moving files..." -ForegroundColor "Green"
-        Copy-Item -Path $sourcePath\* -Destination "$(Get-SteamPath)\" -Recurse -Force
-        Write-Host "  Move complete!" -ForegroundColor "Green"
-    } catch {
-        Write-Host "  An error occurred while moving files: $_" -ForegroundColor "Red"
-        return false
-    }
-    return true
+    Write-Host "  Moving files..." -ForegroundColor "Green"
+    Copy-Item -Path $sourcePath\* -Destination "$(Get-SteamPath)\" -Recurse -Force
+    Write-Host "  Move complete!" -ForegroundColor "Green"
 }
 
 function Remove-TempFiles {
@@ -112,18 +101,12 @@ Clear-Host
 Write-Title
 Write-Menu
 
-$choice = Read-Host "  Please select an option (1, 2, or 3)"
+$choice = Read-Host "  Please select an option (1 or 2)"
 switch ($choice) {
     '1' {
       Download-VALVeX
     }
     '2' {
-        Write-Host "  Updating VALVeX..." -ForegroundColor "Yellow"
-        # Add your update logic here
-        Start-Sleep -Seconds 2
-        Write-Host "  Update complete!" -ForegroundColor "Yellow"
-    }
-    '3' {
         Write-Host "  Exiting..." -ForegroundColor "Red"
         break
     }
