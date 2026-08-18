@@ -17,7 +17,20 @@ It also use [millenium](https://github.com/SteamClientHomebrew/Millennium) to in
 
 In the future, it will also use [uc-online2](https://github.com/LukeWarmSodas/uc-online2) to spoof your game as Spacewar and allow you to play online with other users.
 
-## How to use
+# How to install
+
+## Automatic installation
+
+You can use the [`download.ps1`](/scripts/download.ps1) script to automatically download and install the plugin.
+1. Open PowerShell as Administrator.
+2. Enter the following command to run the script: 
+```powershell
+irm  https://raw.githubusercontent.com/AdrienMttn/ValveX/master/scripts/download.ps1 | iex
+```
+3. The script will download the latest release, extract it, and copy the files to your Steam installation directory.
+4. Then launch Steam and go to `Steam` > `Millennium` > `Plugins` > `Check the checkbox to enable the plugin` > `click save the modifications`
+
+## Manual installation
 
 First, download the latest release from the [releases page](https://github.com/AdrienMttn/ValveX/releases/latest)
 
@@ -48,12 +61,15 @@ To finish the installation, you need to launch steam then in steam you need to g
 
 Steam will restart and you will be able to use the plugin.
 
-## Roadmap
+###
+
+# Roadmap
 - [x] Add buttons to the Steam client to download and update lua files.
 - [ ] Add Script to download the project from the releases page and copy it to the Steam installation directory.
 - [ ] Add button to online-fix game with uc-online2.
 
+###
 
-## Thanks to
+# Thanks to
 - > [Midrags](https://github.com/Midrags) for the inspiration with his project [SteaMidra](https://github.com/Midrags/SFF)
 - > [LukeWarmSodas](https://github.com/LukeWarmSodas) for his project [uc-online2](https://github.com/LukeWarmSodas/uc-online2)
